@@ -12,8 +12,8 @@ public:
         int counter = 0;
         while(tomatoSlices >= 0 && cheeseSlices >= 0)
         {
-            int jumbo = get_burgers(tomatoSlices, cheeseSlices, TOMATO_J);
-            int small = get_burgers(tomatoSlices, cheeseSlices, TOMATO_S);
+            int jumbo = getBurgers(tomatoSlices, cheeseSlices, TOMATO_J);
+            int small = getBurgers(tomatoSlices, cheeseSlices, TOMATO_S);
             if(jumbo != 0 || small != 0 || (tomatoSlices == 0 && cheeseSlices == 0))
             {
                 burgers.emplace_back(jumbo + counter);
@@ -27,7 +27,7 @@ public:
         return burgers;
     }
 private:
-    int get_burgers(int tomatoSlices, int cheeseSlices, int numTomato)
+    int getBurgers(int tomatoSlices, int cheeseSlices, int numTomato)
     {
         int result = tomatoSlices % numTomato == 0 && tomatoSlices / numTomato == cheeseSlices ?
         tomatoSlices / numTomato : 0;
